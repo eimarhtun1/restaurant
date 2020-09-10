@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
     // return view('welcome');
-});
+    // return 'Hello Restaurnt Page';
+// });
 
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
