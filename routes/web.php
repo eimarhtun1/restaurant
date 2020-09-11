@@ -40,3 +40,4 @@ Route::get('shop','PageController@shopfun')->name('shoppage');
 
 //backend
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+Route::resource('orders','OrderBookingController');

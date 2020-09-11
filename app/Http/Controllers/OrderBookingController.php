@@ -14,7 +14,9 @@ class OrderBookingController extends Controller
      */
     public function index()
     {
-        //
+        // return 'hello';
+        $orders = OrderBooking::all();
+       return view('backend.orders.index',compact('orders'));
     }
 
     /**
@@ -35,7 +37,29 @@ class OrderBookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $cartArr = json_decode($request->shop_data); // arr
+        
+        // $cartArr = $myArr->product_list; // if use array in localstorage
+
+        $total = 0;
+        foreach ($cartArr as $row) {
+            $total+=($row->price * $row->qty);
+        }
+
+        $order = new Order;
+        $order->voucherno = uniqid(); // 8880598734
+        $order->orderdate = date('Y-m-d');
+        $order->user_id = Auth::id(); // auth id (1 => users table)
+        $order->note = $request->notes;
+        $order->total = $total;
+        $order->save(); // only saved into order table
+
+        // save into order_detail
+        foreach ($cartArr as $row) {
+            $order->items()->attach($row->id,['qty'=>$row->qty]);
+        }
+
+        return 'Successful!';
     }
 
     /**
@@ -46,7 +70,7 @@ class OrderBookingController extends Controller
      */
     public function show(OrderBooking $orderBooking)
     {
-        //
+        return view('backend.orders.show',compact('orderBooking'));
     }
 
     /**
