@@ -40,3 +40,5 @@ Route::get('shop','PageController@shopfun')->name('shoppage');
 
 //backend
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+
+Route::resource('foods','FoodController');

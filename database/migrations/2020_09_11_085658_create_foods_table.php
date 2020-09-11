@@ -19,6 +19,7 @@ class CreateFoodsTable extends Migration
             $table->integer('price');
             $table->text('photo');
             $table->string('codeno');
+            
             $table->unsignedBigInteger('subcategory_id');
 
             $table->foreign('subcategory_id')
