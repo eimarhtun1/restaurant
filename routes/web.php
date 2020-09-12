@@ -46,6 +46,9 @@ Route::get('subcategory/{id}','PageController@subcategoryfun')->name('subcategor
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 Route::resource('orders','OrderBookingController');
 
+
+Route::resource('foods','FoodController');
+
 Route::resource('categories','CategoryController');
 
 Route::resource('subcategories','SubcategoryController');
