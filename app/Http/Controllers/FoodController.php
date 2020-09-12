@@ -16,8 +16,8 @@ class FoodController extends Controller
     public function index()
     {
         // return 'hello';
-        $foods = Food::all();
-       return view('backend.foods.index',compact('foods'));
+         $foods = Food::all();
+        return view('backend.foods.index',compact('foods'));
     }
 
     /**
@@ -28,7 +28,7 @@ class FoodController extends Controller
     public function create()
     {
         
-        $subcategories =Subcategory::all();
+        $subcategories = Subcategory::all();
         return view('backend.foods.create',compact('subcategories'));
     }
 

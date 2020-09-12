@@ -34,7 +34,7 @@
 						        <th>Total</th>
 						      </tr>
 						    </thead>
-						    <tbody>
+						    <tbody id="shoppingcart_table">
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="icon-close"></span></a></td>
 						        
