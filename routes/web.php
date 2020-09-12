@@ -37,10 +37,17 @@ Route::get('service','PageController@servicefun')->name('servicepage');
 
 Route::get('shop','PageController@shopfun')->name('shoppage');
 
+Route::get('category/{id}','PageController@categoryfun')->name('categorypage');
+
+Route::get('subcategory/{id}','PageController@subcategoryfun')->name('subcategorypage');
+
 
 //backend
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
+
 Route::resource('foods','FoodController');
+
+Route::resource('categories','CategoryController');
 
 Route::resource('subcategories','SubcategoryController');

@@ -26,8 +26,8 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        $categories =Category::all();
-       
+        
+         $categories =Category::all(); 
         return view('backend.subcategories.create',compact('categories'));
     }
 
@@ -39,7 +39,9 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
-         $request->validate([
+       
+
+        $request->validate([
             
             "name"=>'required',
             
@@ -78,8 +80,9 @@ class SubcategoryController extends Controller
      */
     public function edit(Subcategory $subcategory)
     {
+
          $categories =Category::all();
-       
+
         return view('backend.subcategories.edit',compact('categories','subcategory'));
     }
 

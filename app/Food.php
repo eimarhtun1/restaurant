@@ -10,8 +10,8 @@ class Food extends Model
     	'name','price','photo','codeno','subcategory_id'
     ];
 
-     //  public function subcategory($value='')
-     //  {
-    	// return $this->belongsTo('App\Subcategory');
-     //  }
+
+      public function subcategories($value=''){
+    	return $this->belongsTo('App\Subcategory');
+    }
 }

@@ -47,7 +47,7 @@
 		
 		
 		
-		{{-- @error('subcategory')
+		@error('subcategory')
 		    <div class="alert alert-danger">{{$message}}</div>
 		@enderror
 		<div class="form-group row">
@@ -64,7 +64,7 @@
 					
 				</select>
 			</div>
-		</div> --}}
+		</div>
 		<div class="form-group row">
 			
 			<input type="submit" class="btn btn-primary" value="Create" name="btnsubmit">

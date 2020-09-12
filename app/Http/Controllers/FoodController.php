@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Food;
 use App\Subcategory;
+use App\Food;
+
 use Illuminate\Http\Request;
 
 class FoodController extends Controller
@@ -15,7 +15,8 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $foods =Food::all();
+        // return 'hello';
+        $foods = Food::all();
        return view('backend.foods.index',compact('foods'));
     }
 
@@ -33,7 +34,7 @@ class FoodController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     *0
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -87,9 +88,9 @@ class FoodController extends Controller
      */
     public function edit(Food $food)
     {
-        
+        // $foods = Food::all();
         $subcategories =Subcategory::all();
-        return view('backend.foods.edit',compact('subcategories','food'));
+        return view('backend.foods.edit',compact('subcategories','foods'));
     }
 
     /**
