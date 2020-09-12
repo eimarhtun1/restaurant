@@ -25,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.categories.create');
     }
 
     /**
@@ -36,7 +36,26 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            
+            "name"=>'required',
+            
+            
+           
+        ]);
+        
+        // $imageName = time().'.'.$request->photo->extension();
+        // $request->photo->move(public_path('backend/categoryimg'),$imageName);
+        // $path='backend/categoryimg/'.$imageName;
+        
+        $category=new Category;
+        
+        $category->name=$request->name;
+        
+        
+        $category->save();
+        
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -47,7 +66,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('backend.categories.detail',compact('category'));
     }
 
     /**
@@ -58,7 +77,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('backend.categories.edit',compact('category'));
     }
 
     /**
@@ -70,7 +89,22 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+           
+            "name"=>'required',
+           
+            
+            
+        ]);
+
+        
+        
+        
+        $category->name=$request->name;
+        
+        $category->save();
+        
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -81,6 +115,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index');
     }
 }
