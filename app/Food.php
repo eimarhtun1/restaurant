@@ -9,9 +9,11 @@ class Food extends Model
     protected $fillable = [
     	'name','price','photo','codeno','subcategory_id'
     ];
+    protected $table = "foods";
 
 
-      public function subcategories($value=''){
-    	return $this->belongsTo('App\Subcategory');
+    public function subcategories(){
+
+    	return $this->belongsTo('App\Subcategory','subcategory_id');
     }
 }

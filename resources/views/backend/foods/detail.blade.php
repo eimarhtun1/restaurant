@@ -15,9 +15,7 @@
 			<p>{{$food->price}}</p>
 			<p>{{$food->photo}}</p>
 			<p>{{$food->codeno}}</p>
-			<p>{{$food->subcategory->name}}</p>
-			
-
+			<p>{{$food->subcategories->name}}</p>
 		</div>
 		
 </div>
