@@ -3,12 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Food;
+use App\Category;
+use App\Subcategory;
 
 class PageController extends Controller
 {
     public function homefun($value='')
     {
-    	return view('frontend.home');
+        $foods = Food::all();
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
+
+    	return view('frontend.home',compact('foods','categories','subcategories'));
     }
 
      public function aboutfun($value='')
@@ -59,5 +66,24 @@ class PageController extends Controller
     public function shopfun($value='')
     {
     	return view('frontend.shop');
+    }
+
+      public function categoryfun($id)
+   {
+         $subcategories=Subcategory::all();
+        
+        $category=Category::find($id);
+       
+        return view('frontend.subcategory',compact('category','subcategories'));
+    }
+
+
+      public function subcategoryfun($id)
+    {
+        $subcategories=Subcategory::find($id);
+         $subcategories->setRelation('foods',$subcategories->foods()->paginate(3));
+         $foods=Food::all(); 
+        $categories=Category::all();
+        return view('frontend.subcategory',compact('categories','subcategories','foods'));
     }
 }

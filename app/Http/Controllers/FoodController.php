@@ -15,9 +15,11 @@ class FoodController extends Controller
      */
     public function index()
     {
-        // return 'hello';
-         $foods = Food::all();
-        return view('backend.foods.index',compact('foods'));
+
+        
+        $foods = Food::all();
+       return view('backend.foods.index',compact('foods'));
+
     }
 
     /**
@@ -61,7 +63,6 @@ class FoodController extends Controller
         $food->codeno=$request->codeno;
        
         $food->subcategory_id=$request->subcategory;
-        
         $food->save();
         //redirect
         return redirect()->route('foods.index');
@@ -75,8 +76,9 @@ class FoodController extends Controller
      * @param  \App\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function show(Food $food)
+    public function show($id)
     {
+        $food = Food::find($id);
         return view('backend.foods.detail',compact('food'));
     }
 
@@ -86,11 +88,11 @@ class FoodController extends Controller
      * @param  \App\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function edit(Food $food)
+    public function edit($id)
     {
-        // $foods = Food::all();
+         $food = Food::find($id);
         $subcategories =Subcategory::all();
-        return view('backend.foods.edit',compact('subcategories','foods'));
+        return view('backend.foods.edit',compact('subcategories','food'));
     }
 
     /**

@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap-datepicker.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend/css/jquery.timepicker.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     
     <link rel="stylesheet" href="{{ asset('frontend/css/flaticon.css')}}">
@@ -37,16 +38,16 @@
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="{{route('homepage')}}" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="{{route('menupage')}}" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="{{route('servicepage')}}" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="{{route('blogpage')}}" class="nav-link">Blog</a></li>
+	          {{-- <li class="nav-item"><a href="{{route('blogpage')}}" class="nav-link">Blog</a></li> --}}
 	          <li class="nav-item"><a href="{{route('aboutpage')}}" class="nav-link">About</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="{{route('shoppage')}}">Shop</a>
-                <a class="dropdown-item" href="{{route('productSinglepage')}}">Single Product</a>
+               {{--  <a class="dropdown-item" href="{{route('productSinglepage')}}">Single Product</a> --}}
                 <a class="dropdown-item" href="{{route('cartpage')}}">Cart</a>
                 <a class="dropdown-item" href="{{route('checkoutpage')}}">Checkout</a>
               </div>
@@ -65,7 +66,7 @@
     	<div class="overlay"></div>
       <div class="container">
         <div class="row mb-5">
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+          <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About Us</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -76,7 +77,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
+        {{--   <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Recent Blog</h2>
               <div class="block-21 mb-4 d-flex">
@@ -102,8 +103,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-2 col-md-6 mb-5 mb-md-5">
+          </div> --}}
+          <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
              <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Services</h2>
               <ul class="list-unstyled">
@@ -114,7 +115,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+          <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">

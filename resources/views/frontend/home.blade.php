@@ -10,7 +10,7 @@
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">The Best Coffee Testing Experience</h1>
               <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+              <p><a href="#order" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
             </div>
 
           </div>
@@ -42,7 +42,7 @@
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">Creamy Hot and Ready to Serve</h1>
               <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+              <p><a href="#order" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
             </div>
 
           </div>
@@ -182,7 +182,7 @@
 	          	<span class="subheading">Discover</span>
 	            <h2 class="mb-4">Our Menu</h2>
 	            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-	            <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
+	            <p><a href="{{route('menupage')}}" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
 	          </div>
     			</div>
     			<div class="col-md-6">
@@ -271,54 +271,22 @@
           </div>
         </div>
         <div class="row">
+          @foreach($foods as $food)
         	<div class="col-md-3">
         		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-1.jpg')}});"></a>
+    					{{-- <a href="#" class="img" style="background-image: url({{ asset('$food->photo')}});"></a> --}}
+              <img src="{{asset($food->photo)}}" class="card-img-top" alt="...">
     					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>$5.90</span></p>
-    						<p><a href="{{route('cartpage')}}" class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}"
-                data-name="{{$food->name}}"
-                data-price="{{$food->price}}"
-                data-photo="{{$food->photo}}"
-                data-codeno="{{$food->codeno}}">Add to Cart</a></p>
+    						<h3><a href="#">{{$food->codeno}}</a></h3>
+    						<h3><a href="#">{{$food->name}}</a></h3>
+    						<p class="price"><span>${{$food->price}}</span></p>
+    						{{-- <p><a href="{{route('cartpage')}}" class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}} >Add to Cart</a></p> --}}
+                <p><button class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}}">Add To Cart</button></p>
     					</div>
     				</div>
         	</div>
-        	<div class="col-md-3">
-        		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-2.jpg')}});"></a>
-    					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>$5.90</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-    					</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3">
-        		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-3.jpg')}});"></a>
-    					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>$5.90</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-    					</div>
-    				</div>
-        	</div>
-        	<div class="col-md-3">
-        		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-4.jpg')}});"></a>
-    					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>$5.90</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-    					</div>
-    				</div>
-        	</div>
+          @endforeach
+        	
         </div>
     	</div>
     </section>
@@ -358,7 +326,7 @@
     	</div>
     </section>
 
-		<section class="ftco-menu">
+		{{-- <section class="ftco-menu">
     	<div class="container">
     		<div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
@@ -370,15 +338,19 @@
     		<div class="row d-md-flex">
 	    		<div class="col-lg-12 ftco-animate p-md-5">
 		    		<div class="row">
+              
 		          <div class="col-md-12 nav-link-wrap mb-5">
 		            <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-		              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Main Dish</a>
+                 
+		              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true" id="order">aaa</a>
+                  
 
 		              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
 
 		              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Desserts</a>
 		            </div>
 		          </div>
+             
 		          <div class="col-md-12 d-flex align-items-center">
 		            
 		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
@@ -502,7 +474,52 @@
 		      </div>
 		    </div>
     	</div>
+    </section> --}}
+    {{-- copy --}}
+    <section class="ftco-menu">
+    <div class="col-3 align-items-center">
+      <p class="d-inline pr-3"> Shop By </p>
+
+      <div class="dropdown d-inline-block">
+        <a class="nav-link text-decoration-none text-dark font-weight-bold d-block" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="mr-2"> Category </span>
+          <i class="icofont-rounded-down pt-2"></i>
+
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          @foreach($categories as $category)
+          <li class="dropdown-submenu">
+            <a class="dropdown-item" href="javascript:void(0)">
+
+              {{$category->name}}
+
+              <i class="icofont-rounded-right float-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <h6 class="dropdown-header">
+                Subcategory
+              </h6>
+              @foreach($category->subcategories as $subcategory)
+              <li><a class="dropdown-item" href="{{route('subcategorypage',$subcategory->id)}}">
+                @if($category->id==$subcategory->category_id)
+                {{$subcategory->name}}
+                @endif
+              </a></li>
+              @endforeach
+              {{-- <li><a class="dropdown-item" href="#">Submenu0</a></li> --}}
+
+            </ul>
+          </li>
+          @if(!$loop->last)
+              <div class="dropdown-divider"></div>
+          @endif
+          @endforeach
+
+        </ul>
+      </div>
+    </div>
     </section>
+    {{-- ech copy --}}
 
     <section class="ftco-section img" id="ftco-testimony" style="background-image: url({{ asset('frontend/images/bg_1.jpg')}});"  data-stellar-background-ratio="0.5">
     	<div class="overlay"></div>
@@ -586,7 +603,7 @@
 	    </div>
 	  </section>
 
-    <section class="ftco-section">
+    {{-- <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
@@ -643,7 +660,7 @@
         </div>
       </div>
     </section>
-
+ --}}
 		
 		<section class="ftco-appointment">
 			<div class="overlay"></div>

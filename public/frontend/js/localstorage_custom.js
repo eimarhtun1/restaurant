@@ -47,9 +47,10 @@ $(document).ready(function(){
         var codeno=$(this).data('codeno');
         
         //console.log(id);
+        
 
          var item={id:id,name:name,price:price,photo:photo,codeno:codeno,qty:1};
-        //console.log(item);
+         // console.log(item);
         var oldproduct=localStorage.getItem('product');
         if(oldproduct == null){
             var product= new  Array();
@@ -70,7 +71,7 @@ $(document).ready(function(){
 
         localStorage.setItem('product', JSON.stringify(product));
         getData();
-        count();
+        
         
     })
     
@@ -81,35 +82,42 @@ $(document).ready(function(){
         var result='';
         if(myproduct!=null){
             product=JSON.parse(myproduct);
-            var total=0;
+           // var total=0;
     
             $.each(product,function (i,v) {
-                subtotal=v.price*v.qty;
+                //subtotal=v.price*v.qty;
                 
                 // dis=v.price*v.discount/100;
                 // subtotol2=subtotal1-dis*v.qty;
-                total+=subtotol;
+                //total+=subtotol;
                
                 result+=`
                        <tr class="text-center">
                                 <td class="product-remove"><a href="#"><span class="icon-close"></span></a></td>
                                 
-                                <td class="image-prod"><div class="img" style="background-image:url({{ asset('frontend/images/menu-2.jpg')}});"></div></td>
+                                <td class="image-prod"><img src='${v.photo}' width='100' height='100'></td>
                                 
                                 <td class="product-name">
-                                    <h3>Creamy Latte Coffee</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries</p>
+                                    <h3>${v.name}</h3>
+                                    <p>${v.codeno}</p>
                                 </td>
                                 
                                 <td class="price">${v.price}</td>
                                 
-                                <td class="quantity">
-                                     <div class="input-group mb-3">
-                                     <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                     </div>${v.qty}
-                              </td>
+                              <td>
+                                <button class="btn btn-outline-secondary plus_btn" data-id="${i}"> 
+                                    <i class="fa fa-plus-circle" style="font-size:48px;"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <p> ${v.qty}</p>
+                            </td>
+                            <td>
+                                <button class="btn btn-outline-secondary minus_btn" data-id="${i}"> 
+                                    <i class="fa fa-minus-circle" style="font-size:48px;"></i>
+                                </button>
+                            </td>
                                 
-                                <td class="total">${subtotal}</td>
                               </tr>
                         `;
                        
@@ -117,6 +125,7 @@ $(document).ready(function(){
         }
         //console.log(result);
         table.html(result);
+        
         
     }
      $('#shoppingcart_table').on('click','.plus_btn',function() {
@@ -132,7 +141,7 @@ $(document).ready(function(){
                 })
                 localStorage.setItem('product', JSON.stringify(product));
                 getData();
-                count();
+                //count();
                 
             })
       $('#shoppingcart_table').on('click','.minus_btn',function () {
@@ -149,9 +158,9 @@ $(document).ready(function(){
                 })
                 localStorage.setItem('product', JSON.stringify(product));
                 getData();
-               count();
+               //count();
             })
-      $('#shoppingcart_table').on('click','.remove',function () {
+      $('#shoppingcart_table').on('click','.product-remove',function () {
 
 
                 let index=$(this).data('id');

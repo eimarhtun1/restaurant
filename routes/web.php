@@ -31,7 +31,6 @@ Route::get('contact','PageController@contactfun')->name('contactpage');
 
 Route::get('menu','PageController@menufun')->name('menupage');
 
-Route::get('productSingle','PageController@productSinglefun')->name('productSinglepage');
 
 Route::get('service','PageController@servicefun')->name('servicepage');
 
@@ -44,6 +43,7 @@ Route::get('subcategory/{id}','PageController@subcategoryfun')->name('subcategor
 
 //backend
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+Route::resource('orders','OrderBookingController');
 
 
 Route::resource('foods','FoodController');
