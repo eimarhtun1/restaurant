@@ -14,7 +14,7 @@
 		    <div class="alert alert-danger">{{$message}}</div>
 		@enderror
 		<div class="form-group row">
-			<label  class="col-sm-2 col-form-label">Name</label>
+			<label  class="col-sm-2 col-form-label"><b>Name</b></label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" name="name" value="{{$food->name}}">
 			</div>
@@ -24,7 +24,7 @@
 		    <div class="alert alert-danger">{{$message}}</div>
 		@enderror
 		<div class="form-group row">
-			<label  class="col-sm-2 col-form-label">Price</label>
+			<label  class="col-sm-2 col-form-label"><b>Price</b></label>
 			<div class="col-sm-10">
 				<input type="number" class="form-control" name="price" value="{{$food->price}}">
 			</div>
@@ -33,7 +33,7 @@
 		    <div class="alert alert-danger">{{$message}}</div>
 		@enderror
 		<div class="form-group row">
-			<label  class="col-sm-2 col-form-label">Photo</label>
+			<label  class="col-sm-2 col-form-label"><b>Photo</b></label>
 			<div class="col-sm-10">
 				<input type="file" class="form-control" name="photo" ><img src="{{asset($food->photo)}}" class="img-fluid w-50">
 				<input type="hidden" name="oldphoto" value="{{$food->photo}}">
@@ -43,7 +43,7 @@
 		    <div class="alert alert-danger">{{$message}}</div>
 		@enderror
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Code No</label>
+			<label class="col-sm-2 col-form-label"><b>Code No</b></label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" name="codeno" value="{{$food->codeno}}" readonly="readonly">
 			</div>
@@ -55,9 +55,9 @@
 
 		<div class="form-group row">
 
-			<label class="col-sm-2 col-form-label">Subcategory</label>
+			<label class="col-sm-3 col-form-label"><b>Subcategory</b></label>
 
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<select class="form-control form-control-md" id="inputSubcategory" name="subcategory">
 					<optgroup label="Choose Subcategory">
 						{{-- $brands = DB::table('brands')

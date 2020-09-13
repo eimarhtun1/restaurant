@@ -34,7 +34,7 @@
 						<td>{{$i++}}</td>
 						<td>{{$food->name}}</td>
 						<td>{{$food->price}}</td>
-						<td>{{$food->photo}}</td>
+						<td><img src="{{$food->photo}}" width="100" height="100"></td>
 						<td>{{$food->codeno}}</td>
 						<td>
 							<a href="{{route('foods.show',$food->id)}}" class="btn btn-info">Detail</a>

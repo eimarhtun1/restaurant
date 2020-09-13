@@ -11,11 +11,11 @@
 			<img src="{{asset($food->photo)}}" class="img-fluid">
 		</div>
 		<div class="col-md-8">
-			<p>{{$food->name}}</p>
-			<p>{{$food->price}}</p>
-			<p>{{$food->photo}}</p>
-			<p>{{$food->codeno}}</p>
-			<p>{{$food->subcategories->name}}</p>
+			<p><b>Food Name: </b>{{$food->name}}</p>
+			<p><b>Food Price: </b>{{$food->price}}</p>
+			{{-- <p>{{$food->photo}}</p> --}}
+			<p><b>Code No: </b>{{$food->codeno}}</p>
+			<p><b>Category Name: </b>{{$food->subcategories->name}}</p>
 		</div>
 		
 </div>

@@ -12,7 +12,7 @@
 		    <div class="alert alert-danger">{{$message}}</div>
 		@enderror
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">Name</label>
+			<label class="col-sm-2 col-form-label"><b>Name:</b></label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" name="name">
 			</div>
@@ -21,7 +21,7 @@
 		    <div class="alert alert-danger">{{$message}}</div>
 		@enderror
 		<div class="form-group row">
-			<label  class="col-sm-2 col-form-label">Price</label>
+			<label  class="col-sm-2 col-form-label"><b>Price:</b></label>
 			<div class="col-sm-10">
 				<input type="number" class="form-control" name="price">
 			</div>
@@ -30,7 +30,7 @@
 		    <div class="alert alert-danger">{{$message}}</div>
 		@enderror
 		<div class="form-group row">
-			<label  class="col-sm-2 col-form-label">Photo</label>
+			<label  class="col-sm-2 col-form-label"><b>Photo:</b></label>
 			<div class="col-sm-10">
 				<input type="file" class="form-control" name="photo">
 			</div>
@@ -39,7 +39,7 @@
 		    <div class="alert alert-danger">{{$message}}</div>
 		@enderror
 		<div class="form-group row">
-			<label  class="col-sm-2 col-form-label">Code No</label>
+			<label  class="col-sm-2 col-form-label"><b>Code No:</b></label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" name="codeno">
 			</div>
@@ -52,9 +52,9 @@
 		@enderror
 		<div class="form-group row">
 			
-			<label class="col-sm-2 col-form-label">Subcategory</label>
+			<label class="col-sm-3 col-form-label"><b>Subcategory:</b>&nbsp;&nbsp;</label>
 			
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<select class="form-control form-control-md" id="inputSubcategory" name="subcategory">
 					<optgroup label="Choose Subcategory">
 						@foreach($subcategories as $subcategory)
