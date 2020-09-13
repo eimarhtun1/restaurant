@@ -11,7 +11,6 @@ class Food extends Model
     ];
     protected $table = "foods";
 
-
     public function subcategories(){
 
     	return $this->belongsTo('App\Subcategory','subcategory_id');

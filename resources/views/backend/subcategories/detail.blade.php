@@ -1,4 +1,4 @@
-@extends('backendtemplate')
+{{-- @extends('backendtemplate')
 @section('content')
 <div class="container-fluid">
 	<div class="row mb-5">
@@ -7,9 +7,13 @@
 		</div>
 	</div>
 	<div class="row">
-		{{-- <div class="col-md-4">
+
+
+		<div class="col-md-4">
 			<img src="{{asset($subcategory->items->photo)}}" class="img-fluid">
-		</div> --}}
+		</div>
+
+		
 		<div class="col-md-8">
 			<p><strong>Subcategory Name : </strong>{{$subcategory->name}}</p>
 			<p><strong>Category Name :</strong> {{$subcategory->category->name}}</p>
@@ -22,4 +26,4 @@
 </div>
 
 
-@endsection
+@endsection --}}

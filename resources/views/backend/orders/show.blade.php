@@ -31,11 +31,11 @@
             @endphp
             <tr>
               <td>{{$i++}}</td>
-              <td>{{$item->name}}</td>
-              <td>{{$item->price}} MMK</td>
-              <td>{{$item->pivot->qty}}</td>
+              <td>{{$order->voucherno}}</td>
+              <td>{{$order->orderdate}} MMK</td>
+              <td>{{$order->user->name}}</td>
               <td>
-                {{$subtotal}}
+                {{$order->total}}MMK
               </td>
             </tr>
             @endforeach

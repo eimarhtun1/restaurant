@@ -31,7 +31,6 @@ Route::get('contact','PageController@contactfun')->name('contactpage');
 
 Route::get('menu','PageController@menufun')->name('menupage');
 
-Route::get('productSingle','PageController@productSinglefun')->name('productSinglepage');
 
 Route::get('service','PageController@servicefun')->name('servicepage');
 
@@ -43,6 +42,8 @@ Route::get('subcategory/{id}','PageController@subcategoryfun')->name('subcategor
 
 
 //backend
+
+Route::middleware('auth')->group(function(){
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 Route::resource('orders','OrderBookingController');
 
@@ -52,3 +53,8 @@ Route::resource('foods','FoodController');
 Route::resource('categories','CategoryController');
 
 Route::resource('subcategories','SubcategoryController');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

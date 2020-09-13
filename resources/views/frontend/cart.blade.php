@@ -30,12 +30,12 @@
 						        <th>&nbsp;</th>
 						        <th>Product</th>
 						        <th>Price</th>
-						        <th>Quantity</th>
+						        <th colspan="5">Quantity</th>
 						        <th>Total</th>
 						      </tr>
 						    </thead>
-						    <tbody>
-						      <tr class="text-center">
+						    <tbody id="shoppingcart_table">
+						      {{-- <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="icon-close"></span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url({{ asset('frontend/images/menu-2.jpg')}});"></div></td>
@@ -54,9 +54,9 @@
 					          </td>
 						        
 						        <td class="total">$4.90</td>
-						      </tr><!-- END TR-->
+						      </tr> --}}<!-- END TR-->
 
-						      <tr class="text-center">
+						      {{-- <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="icon-close"></span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url({{ asset('frontend/images/dish-2.jpg')}});"></div></td>
@@ -75,7 +75,7 @@
 					          </td>
 						        
 						        <td class="total">$15.70</td>
-						      </tr><!-- END TR-->
+						      </tr> --}}<!-- END TR-->
 						    </tbody>
 						  </table>
 					  </div>

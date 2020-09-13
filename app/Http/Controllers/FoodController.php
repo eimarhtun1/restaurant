@@ -15,8 +15,11 @@ class FoodController extends Controller
      */
     public function index()
     {
+
+        
         $foods = Food::all();
        return view('backend.foods.index',compact('foods'));
+
     }
 
     /**
@@ -27,7 +30,7 @@ class FoodController extends Controller
     public function create()
     {
         
-        $subcategories =Subcategory::all();
+        $subcategories = Subcategory::all();
         return view('backend.foods.create',compact('subcategories'));
     }
 
