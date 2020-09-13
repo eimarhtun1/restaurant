@@ -43,8 +43,15 @@ Route::get('subcategory/{id}','PageController@subcategoryfun')->name('subcategor
 
 
 //backend
+
+Route::middleware('auth')->group(function(){
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 Route::resource('categories','CategoryController');
 
 Route::resource('subcategories','SubcategoryController');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
