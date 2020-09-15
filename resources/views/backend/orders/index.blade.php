@@ -31,11 +31,9 @@
               <th>No</th>
               <th>Voucherno</th>
               <th>Order_date</th>
-              <th>Total_price</th>
-              <th>No_person</th>
-              <th>Booking_time</th>
-              <th>Address</th>
-              <th>Order_status</th>
+              <th>User Name</th>
+              <th>Total Price</th>
+              
               <th>Actions</th>
             </tr>
           </thead>
@@ -44,10 +42,11 @@
             @foreach($orders as $order)
             <tr>
               <td>{{$i++}}</td>
-              <td>{{$order->voucherno}}</td>
-              <td>{{$order->orderdate}}</td>
+              <td>{{$order->voucherid}}</td>
+              <td>{{$order->order_date}}</td>
               <td>{{$order->user->name}}</td>
-              <td>{{$order->total}} MMK</td>
+              <td>{{$order->total}}MMK </td>
+              
               <td>
                 <a href="{{route('orders.show',$order->id)}}" class="btn btn-primary">Detail</a>
               </td>

@@ -1,42 +1,35 @@
 
 $(document).ready(function(){
     getData();
+     getTotal();
+    count()
     $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
    });
+
    // count();
-   // function count(){
-   //          var myproduct=localStorage.getItem('product');
-   //          if(myproduct){
-   //            var myproduct_obj=JSON.parse(myproduct);
-   //            if(myproduct_obj!=0){
-   //              var count=myproduct_obj.length;
-   //              var total=0;
-   //              $.each(myproduct_obj,function(i,v){
-   //                //console.log(i,v);
-   //                if(v.discount>0){
-   //                  var price=v.price-(v.price*(v.discount/100));
-   //                  var old_price=v.price;
-   //                }else{
-   //                  var price=v.price;
-   //                  var old_price=v.price;
-   //                }
-   //                total+=(price*v.qty);
-   //              })
-   //              $(".cartNoti").html(count);
-   //            }else{
-   //              $(".cartNoti").html(0);
-   //            }
+   function count(){
+            var myproduct=localStorage.getItem('product');
+            if(myproduct){
+              var myproduct_obj=JSON.parse(myproduct);
+              if(myproduct_obj!=0){
+                var count=myproduct_obj.length;
+               
+               
+                $("#cartNoti").html(count);
+              }else{
+                $("#cartNoti").html(0);
+              }
 
-   //          }
-   //          else{
-   //            $(".cartNoti").html(0);
+            }
+            else{
+              $("#cartNoti").html(0);
 
-   //          }
+            }
 
-   //        };
+          };
        
     $('.add_to_cart').click(function(){
 
@@ -70,9 +63,7 @@ $(document).ready(function(){
         }
 
         localStorage.setItem('product', JSON.stringify(product));
-        getData();
-        
-        
+        getData();     
     })
     
     function getData(){
@@ -85,11 +76,12 @@ $(document).ready(function(){
            // var total=0;
     
             $.each(product,function (i,v) {
-                //subtotal=v.price*v.qty;
+                subtotal=v.price*v.qty;
                 
                 // dis=v.price*v.discount/100;
                 // subtotol2=subtotal1-dis*v.qty;
-                //total+=subtotol;
+                // total+=subtotol;
+
                
                 result+=`
                        <tr class="text-center">
@@ -117,6 +109,10 @@ $(document).ready(function(){
                                     <i class="fa fa-minus-circle" style="font-size:48px;"></i>
                                 </button>
                             </td>
+                            <td colspan="3">
+                            <p>    ${subtotal}</p>
+                            </td>
+
                                 
                               </tr>
                         `;
@@ -128,6 +124,56 @@ $(document).ready(function(){
         
         
     }
+
+
+    // check total
+    function getTotal(){
+
+
+        var myproduct=localStorage.getItem('product');
+        
+        var table=$('#totalprice');
+        var dis=$('#discount');
+        var all=$('#alltotal');
+        
+        if(myproduct!=null){
+            product=JSON.parse(myproduct);
+           var total=0;
+            var subtotol = 0;
+            $.each(product,function (i,v) {
+                subtotol = v.price*v.qty;
+                
+                // dis=v.price*v.discount/100;
+                // subtotol2=subtotal1-dis*v.qty;
+                 total+= subtotol; 
+                 
+               
+            })
+
+        }
+
+      table.html(total);
+      if(total>10000){
+        var discount = total*0.05;
+        dis.html(discount);
+        var alltotal = total-discount;
+        all.html(alltotal);
+
+
+
+      }else {
+        table.html(total);
+        dis.html(0);
+        all.html(total);
+
+      }
+
+        }
+       
+    
+
+
+    // end check total
      $('#shoppingcart_table').on('click','.plus_btn',function() {
                 
                 var id=$(this).data('id');
@@ -142,6 +188,7 @@ $(document).ready(function(){
                 localStorage.setItem('product', JSON.stringify(product));
                 getData();
                 //count();
+                getTotal();
                 
             })
       $('#shoppingcart_table').on('click','.minus_btn',function () {
@@ -158,6 +205,7 @@ $(document).ready(function(){
                 })
                 localStorage.setItem('product', JSON.stringify(product));
                 getData();
+                getTotal();
                //count();
             })
       $('#shoppingcart_table').on('click','.product-remove',function () {
@@ -172,11 +220,12 @@ $(document).ready(function(){
                 localStorage.setItem('product', JSON.stringify(product));
                 getData();
                 count();
+                getTotal();
             })
+     
 
       // $('.buy_now').on('click',function(){
       //   var notes=$('#notes').val();
-      //   //console.log(notes);
       //   if(notes==''){
       //       alert('Please fill request message!');
       //   }else{
@@ -194,6 +243,20 @@ $(document).ready(function(){
         
       //   }
       // })
-       
+         
+         $('.buy_now').on('click',function(){
+          var shopString=localStorage.getItem("product");
+          if(shopString){
+            $.post('/orders',{shop_data:shopString},function(response){
+              if(response){
+                alert(response);
+                localStorage.clear();
+                getData();
+                location.href="/";
+              }
+            })
+
+          }
+         })
     
 })

@@ -10,7 +10,7 @@
 
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
             	<h1 class="mb-3 mt-5 bread">Checkout</h1>
-	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Checout</span></p>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Chekout</span></p>
             </div>
 
           </div>
@@ -20,25 +20,22 @@
 
     <section class="ftco-section">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-xl-8 ftco-animate">
-						<form action="#" class="billing-form ftco-bg-dark p-3 p-md-5">
+						<form action="{{ route('checkoutpage')}}" class="billing-form ftco-bg-dark p-3 p-md-5" method="GET">
+
 							<h3 class="mb-4 billing-heading">Billing Details</h3>
 	          	<div class="row align-items-end">
+	          		<div class="w-100"></div>
 	          		<div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="firstname">Firt Name</label>
+	                	<label for="firstname">Name</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
 	              </div>
-	              <div class="col-md-6">
-	                <div class="form-group">
-	                	<label for="lastname">Last Name</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-                </div>
-                <div class="w-100"></div>
-		            <div class="col-md-12">
+	             
+                {{-- <div class="w-100"></div> --}}
+		           {{--  <div class="col-md-12">
 		            	<div class="form-group">
 		            		<label for="country">State / Country</label>
 		            		<div class="select-wrap">
@@ -53,32 +50,26 @@
 		                  </select>
 		                </div>
 		            	</div>
-		            </div>
-		            <div class="w-100"></div>
+		            </div> --}}
+		            {{-- <div class="w-100"></div> --}}
 		            <div class="col-md-6">
 		            	<div class="form-group">
-	                	<label for="streetaddress">Street Address</label>
+	                	<label for="streetaddress"> Address</label>
 	                  <input type="text" class="form-control" placeholder="House number and street name">
 	                </div>
 		            </div>
-		            <div class="col-md-6">
+		            {{-- <div class="col-md-6">
 		            	<div class="form-group">
 	                  <input type="text" class="form-control" placeholder="Appartment, suite, unit etc: (optional)">
 	                </div>
-		            </div>
-		            <div class="w-100"></div>
-		            <div class="col-md-6">
-		            	<div class="form-group">
-	                	<label for="towncity">Town / City</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-		            </div>
-		            <div class="col-md-6">
+		            </div> --}}
+		           
+		            {{-- <div class="col-md-6">
 		            	<div class="form-group">
 		            		<label for="postcodezip">Postcode / ZIP *</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
-		            </div>
+		            </div> --}}
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 	                <div class="form-group">
@@ -92,7 +83,21 @@
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
                 </div>
+
                 <div class="w-100"></div>
+		            <div class="col-md-6">
+	                <div class="form-group">
+	                	<label for="phone">Password</label>
+	                  <input type="password" class="form-control" placeholder="">
+	                </div>
+	              </div>
+	              <div class="col-md-6">
+	                <div class="form-group">
+	                	<label for="emailaddress">Confirm Password</label>
+	                  <input type="password" class="form-control" placeholder="">
+	                </div>
+                </div>
+                {{-- <div class="w-100"></div>
                 <div class="col-md-12">
                 	<div class="form-group mt-4">
 										<div class="radio">
@@ -100,13 +105,14 @@
 										  <label><input type="radio" name="optradio"> Ship to different address</label>
 										</div>
 									</div>
-                </div>
+                </div> --}}
+                <button type="submit" class="btn btn-primary mainfullbtncolor btn-block"> Create Account </button>
 	            </div>
 	          </form><!-- END -->
 
 
 
-	          <div class="row mt-5 pt-3 d-flex">
+	          {{-- <div class="row mt-5 pt-3 d-flex">
 	          	<div class="col-md-6 d-flex">
 	          		<div class="cart-detail cart-total ftco-bg-dark p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">Cart Total</h3>
@@ -163,14 +169,14 @@
 									<p><a href="#"class="btn btn-primary py-3 px-4">Place an order</a></p>
 								</div>
 	          	</div>
-	          </div>
+	          </div> --}}
           </div> <!-- .col-md-8 -->
 
 
 
 
-          <div class="col-xl-4 sidebar ftco-animate">
-            <div class="sidebar-box">
+         {{--  <div class="col-xl-4 sidebar ftco-animate"> --}}
+            {{-- <div class="sidebar-box">
               <form action="#" class="search-form">
                 <div class="form-group">
                 	<div class="icon">
@@ -246,8 +252,8 @@
             <div class="sidebar-box ftco-animate">
               <h3>Paragraph</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-            </div>
-          </div>
+            </div> --}}
+         {{--  </div> --}}
 
         </div>
       </div>

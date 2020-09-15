@@ -1,14 +1,14 @@
 @extends('frontendtemplate')
 @section('content')
 <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url({{ asset('frontend/images/bg_1.jpg')}});">
+      <div class="slider-item" style="background-image: url({{ asset('frontend/images/wall6.jpg')}});">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
             <div class="col-md-8 col-sm-12 text-center ftco-animate">
             	<span class="subheading">Welcome</span>
-              <h1 class="mb-4">The Best Coffee Testing Experience</h1>
+              <h1 class="mb-4">The Best Food Testing Experience</h1>
               <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
               <p><a href="#order" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
             </div>
@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <div class="slider-item" style="background-image: url({{ asset('frontend/images/bg_2.jpg')}});">
+      <div class="slider-item" style="background-image: url({{ asset('frontend/images/wall3.jpg')}});">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -33,7 +33,7 @@
         </div>
       </div>
 
-      <div class="slider-item" style="background-image: url({{ asset('frontend/images/bg_3.jpg')}});">
+      <div class="slider-item" style="background-image: url({{ asset('frontend/images/wall5.jpg')}});">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -42,7 +42,7 @@
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">Creamy Hot and Ready to Serve</h1>
               <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#order" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+              <p><a href="{{route('shoppage')}}" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="{{route('menupage')}}" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
             </div>
 
           </div>
@@ -50,26 +50,26 @@
       </div>
     </section>
 
-    <section class="ftco-intro">
+    {{-- <section class="ftco-intro">
     	<div class="container-wrap">
     		<div class="wrap d-md-flex align-items-xl-end">
 	    		<div class="info">
 	    			<div class="row no-gutters">
-	    				<div class="col-md-4 d-flex ftco-animate">
+	    				<div class="col-md-4 col-12 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-phone"></span></div>
 	    					<div class="text">
 	    						<h3>000 (123) 456 7890</h3>
 	    						<p>A small river named Duden flows by their place and supplies.</p>
 	    					</div>
 	    				</div>
-	    				<div class="col-md-4 d-flex ftco-animate">
+	    				<div class="col-md-4 col-12 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-my_location"></span></div>
 	    					<div class="text">
 	    						<h3>198 West 21th Street</h3>
 	    						<p>	203 Fake St. Mountain View, San Francisco, California, USA</p>
 	    					</div>
 	    				</div>
-	    				<div class="col-md-4 d-flex ftco-animate">
+	    				<div class="col-md-4 col-12 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-clock-o"></span></div>
 	    					<div class="text">
 	    						<h3>Open Monday-Friday</h3>
@@ -118,10 +118,10 @@
 	    		</div>
     		</div>
     	</div>
-    </section>
+    </section> --}}
 
     <section class="ftco-about d-md-flex">
-    	<div class="one-half img" style="background-image: url({{ asset('frontend/images/about.jpg')}});"></div>
+    	<div class="one-half img" style="background-image: url({{ asset('frontend/images/menu.jpg')}});"></div>
     	<div class="one-half ftco-animate">
     		<div class="overlap">
 	        <div class="heading-section ftco-animate ">
@@ -189,17 +189,17 @@
     				<div class="row">
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-1.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/s1.jpg')}});"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-2.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/b2.jpg')}});"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-3.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/c1.jpg')}});"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
@@ -266,7 +266,7 @@
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
           	<span class="subheading">Discover</span>
-            <h2 class="mb-4">Best Coffee Sellers</h2>
+            <h2 class="mb-4">Best Food Products</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           </div>
         </div>
@@ -476,49 +476,7 @@
     	</div>
     </section> --}}
     {{-- copy --}}
-    <section class="ftco-menu">
-    <div class="col-3 align-items-center">
-      <p class="d-inline pr-3"> Shop By </p>
-
-      <div class="dropdown d-inline-block">
-        <a class="nav-link text-decoration-none text-dark font-weight-bold d-block" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="mr-2"> Category </span>
-          <i class="icofont-rounded-down pt-2"></i>
-
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          @foreach($categories as $category)
-          <li class="dropdown-submenu">
-            <a class="dropdown-item" href="javascript:void(0)">
-
-              {{$category->name}}
-
-              <i class="icofont-rounded-right float-right"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <h6 class="dropdown-header">
-                Subcategory
-              </h6>
-              @foreach($category->subcategories as $subcategory)
-              <li><a class="dropdown-item" href="{{route('subcategorypage',$subcategory->id)}}">
-                @if($category->id==$subcategory->category_id)
-                {{$subcategory->name}}
-                @endif
-              </a></li>
-              @endforeach
-              {{-- <li><a class="dropdown-item" href="#">Submenu0</a></li> --}}
-
-            </ul>
-          </li>
-          @if(!$loop->last)
-              <div class="dropdown-divider"></div>
-          @endif
-          @endforeach
-
-        </ul>
-      </div>
-    </div>
-    </section>
+   
     {{-- ech copy --}}
 
     <section class="ftco-section img" id="ftco-testimony" style="background-image: url({{ asset('frontend/images/bg_1.jpg')}});"  data-stellar-background-ratio="0.5">
@@ -662,7 +620,7 @@
     </section>
  --}}
 		
-		<section class="ftco-appointment">
+		{{-- <section class="ftco-appointment">
 			<div class="overlay"></div>
     	<div class="container-wrap">
     		<div class="row no-gutters d-md-flex align-items-center">
@@ -709,5 +667,5 @@
 	    		</div>    			
     		</div>
     	</div>
-    </section>
+    </section> --}}
     @endsection

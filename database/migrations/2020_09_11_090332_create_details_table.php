@@ -19,10 +19,18 @@ class CreateDetailsTable extends Migration
             $table->integer('price');
             $table->integer('qty');
             $table->unsignedBigInteger('order_id');
+             $table->unsignedBigInteger('food_id');
+
 
             $table->foreign('order_id')
                   ->references('id')
                   ->on('order_bookings')
+                  ->onDelete('cascade');
+           
+
+              $table->foreign('food_id')
+                  ->references('id')
+                  ->on('foods')
                   ->onDelete('cascade');
             $table->timestamps();
         });

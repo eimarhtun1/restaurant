@@ -1,21 +1,37 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use App\OrderBooking;
+use App\Food;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderBookingController extends Controller
 {
+    public function __construct($value='')
+    {
+      $this->middleware('role:Admin')->only('index','show');
+      $this->middleware('role:Customer')->only('store');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // return 'hello';
-        $orders = OrderBooking::all();
+        $date1=$request->sdate;
+       $date2=$request->edate;
+       if ($request->sdate && $request->edate) {
+        
+        $orders=Order::whereBetween('orderdate',[new Carbon($date1),new Carbon($date2)])->where('status',0)->get();
+       }else{
+       $orders = OrderBooking::all();
+       }
+
+       
+        
        return view('backend.orders.index',compact('orders'));
     }
 
@@ -46,17 +62,15 @@ class OrderBookingController extends Controller
             $total+=($row->price * $row->qty);
         }
 
-        $order = new Order;
-        $order->voucherno = uniqid(); // 8880598734
-        $order->orderdate = date('Y-m-d');
-        $order->user_id = Auth::id(); // auth id (1 => users table)
-        $order->note = $request->notes;
-        $order->total = $total;
-        $order->save(); // only saved into order table
-
-        // save into order_detail
+        $order = new OrderBooking;
+       $order->voucherid=uniqid();
+       $order->order_date=date('Y-m-d');
+       $order->user_id=Auth::id();;
+       $order->total=$total;
+       $order->save();
+       
         foreach ($cartArr as $row) {
-            $order->items()->attach($row->id,['qty'=>$row->qty]);
+            $order->foods()->attach($row->id,['qty'=>$row->qty]);
         }
 
         return 'Successful!';
@@ -69,7 +83,8 @@ class OrderBookingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(OrderBooking $orderBooking)
-    {
+    {  
+
         return view('backend.orders.show',compact('orderBooking'));
     }
 
@@ -81,7 +96,7 @@ class OrderBookingController extends Controller
      */
     public function edit(OrderBooking $orderBooking)
     {
-        //
+       
     }
 
     /**

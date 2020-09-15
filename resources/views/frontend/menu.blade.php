@@ -3,7 +3,7 @@
 
 <section class="home-slider owl-carousel">
 
-      <div class="slider-item" style="background-image: url({{ asset('frontend/images/bg_3.jpg')}});" data-stellar-background-ratio="0.5">
+      <div class="slider-item" style="background-image: url({{ asset('frontend/images/wall6.jpg')}});" data-stellar-background-ratio="0.5">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center">
@@ -18,7 +18,7 @@
       </div>
     </section>
 
-    <section class="ftco-intro">
+    {{-- <section class="ftco-intro">
     	<div class="container-wrap">
     		<div class="wrap d-md-flex align-items-xl-end">
 	    		<div class="info">
@@ -86,7 +86,7 @@
 	    		</div>
     		</div>
     	</div>
-    </section>
+    </section> --}}
 
     <section class="ftco-section">
     	<div class="container">
@@ -98,7 +98,7 @@
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Cornish - Mackerel</span></h3>
-	        				<span class="price">$20.00</span>
+	        				<span class="price">5000 MMK</span>
 	        			</div>
 	        			<div class="d-block">
 	        				<p>A small river named Duden flows by their place and supplies</p>
@@ -302,7 +302,7 @@
     	</div>
     </section>
 
-    <section class="ftco-menu mb-5 pb-5">
+    {{-- <section class="ftco-menu mb-5 pb-5">
     	<div class="container">
     		<div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
@@ -316,16 +316,39 @@
 		    		<div class="row">
 		          <div class="col-md-12 nav-link-wrap mb-5">
 		            <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-		              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Main Dish</a>
+		            	
+		                <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Main Dish</a>
 
 		              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
 
 		              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Desserts</a>
+		             
+
 		            </div>
 		          </div>
-		          <div class="col-md-12 d-flex align-items-center">
+		          <div class="col-md-12 d-flex align-items-center"> --}}
+		          	{{-- foods --}}
+		          	{{-- <div class="row"> --}}
+         {{--  aa@foreach($foods as $food)
+        	<div class="col-md-3">
+        		<div class="menu-entry"> --}}
+    					{{-- <a href="#" class="img" style="background-image: url({{ asset('$food->photo')}});"></a> --}}
+              {{-- aa<img src="{{asset($food->photo)}}" class="card-img-top" alt="...">
+    					aa<div class="text text-center pt-4">
+    						<h3><a href="#">{{$food->codeno}}</a></h3>
+    						<h3><a href="#">{{$food->name}}</a></h3>
+    						<p class="price"><span>${{$food->price}}</span></p> --}}
+    						{{-- <p><a href="{{route('cartpage')}}" class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}} >Add to Cart</a></p> --}}
+                {{-- <p><button class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}}">Add To Cart</button></p> --}}
+    					{{-- </div> --}}
+    		{{-- 		</div>
+        	</div>
+          
+        	
+        </div> --}}
+		          	{{-- end foods --}}
 		            
-		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
+		            {{-- <div class="tab-content ftco-animate" id="v-pills-tabContent">
 
 		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
 		              	<div class="row">
@@ -539,7 +562,7 @@
 		              		</div>
 		              	</div>
 		              </div>
-		            </div>
+		            </div> --}}
 		          </div>
 		        </div>
 		      </div>

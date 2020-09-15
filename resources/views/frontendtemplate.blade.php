@@ -3,6 +3,7 @@
   <head>
     <title>Coffee - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -40,7 +41,7 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="{{route('homepage')}}" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="{{route('menupage')}}" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="{{route('servicepage')}}" class="nav-link">Services</a></li>
+	          {{-- <li class="nav-item"><a href="{{route('servicepage')}}" class="nav-link">Services</a></li> --}}
 	          {{-- <li class="nav-item"><a href="{{route('blogpage')}}" class="nav-link">Blog</a></li> --}}
 	          <li class="nav-item"><a href="{{route('aboutpage')}}" class="nav-link">About</a></li>
 	          <li class="nav-item dropdown">
@@ -49,11 +50,40 @@
               	<a class="dropdown-item" href="{{route('shoppage')}}">Shop</a>
                {{--  <a class="dropdown-item" href="{{route('productSinglepage')}}">Single Product</a> --}}
                 <a class="dropdown-item" href="{{route('cartpage')}}">Cart</a>
-                <a class="dropdown-item" href="{{route('checkoutpage')}}">Checkout</a>
+               
               </div>
             </li>
 	          <li class="nav-item"><a href="{{route('contactpage')}}" class="nav-link">Contact</a></li>
-	          <li class="nav-item cart"><a href="{{route('cartpage')}}" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+	          <li class="nav-item cart"><a href="{{route('cartpage')}}" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small id="cartNoti"></small></span></a></li>
+
+          <div class="col-lg-4 col-10">
+            @role('Customer')
+            <span class="float-right d-xl-block d-lg-block d-none">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle loginlink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{Auth::user()->name}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+              </a>
+              <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </div>
+          </span>
+          @else
+          <span class="float-left d-xl-block d-lg-block d-none my-3">
+            <a href="{{route('checkoutpage')}}" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right">Register </a><a href="{{route('loginpage')}}" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right"> Login | </a>
+
+          </span>
+         {{--  <li class="nav-item"><a href="{{route('loginpage')}}" class="nav-link">Login</a></li>
+
+            <li class="nav-item"><a href="{{route('checkoutpage')}}" class="nav-link">Checkout</a></li> --}}
+          @endrole
+
+        </div>
+
 	        </ul>
 	      </div>
 		  </div>
@@ -68,8 +98,9 @@
         <div class="row mb-5">
           <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h2 class="ftco-heading-2">Open Hour</h2>
+              <h5>Open Monday-Friday</h5>
+              <p>8:00am - 9:00pm</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>

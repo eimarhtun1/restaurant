@@ -2,7 +2,7 @@
  @section('content')
  <section class="home-slider owl-carousel">
 
-      <div class="slider-item" style="background-image: url({{ asset('frontend/images/bg_3.jpg')}});" data-stellar-background-ratio="0.5">
+      <div class="slider-item" style="background-image: url({{ asset('frontend/images/wall3.jpg')}});" data-stellar-background-ratio="0.5">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center">
@@ -18,7 +18,7 @@
     </section>
 
     <section class="ftco-about d-md-flex">
-    	<div class="one-half img" style="background-image: url({{ asset('frontend/images/about.jpg')}});"></div>
+    	<div class="one-half img" style="background-image: url({{ asset('frontend/images/menu.jpg')}});"></div>
     	<div class="one-half ftco-animate">
     		<div class="overlap">
 	        <div class="heading-section ftco-animate ">
@@ -122,14 +122,14 @@
 	          	<span class="subheading">Discover</span>
 	            <h2 class="mb-4">Our Menu</h2>
 	            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-	            <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
+	            <p><a href="{{route('menupage')}}" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
 	          </div>
     			</div>
     			<div class="col-md-6">
     				<div class="row">
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-1.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/c1.jpg')}});"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
@@ -139,12 +139,12 @@
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-3.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/ff3.jpg')}});"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-4.jpg')}});"></a>
+		    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/sea1.jpg')}});"></a>
 		    				</div>
     					</div>
     				</div>

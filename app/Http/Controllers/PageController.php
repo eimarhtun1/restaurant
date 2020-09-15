@@ -17,6 +17,13 @@ class PageController extends Controller
 
     	return view('frontend.home',compact('foods','categories','subcategories'));
     }
+   public function loginfun($value='')
+    {
+        $subcategories=Subcategory::all();
+         $foods=Food::all(); 
+        $categories=Category::all();
+        return view('frontend.login',compact('categories','subcategories','foods'));
+    }
 
      public function aboutfun($value='')
     {
@@ -40,6 +47,7 @@ class PageController extends Controller
 
      public function checkoutfun($value='')
     {
+
     	return view('frontend.checkout');
     }
 
@@ -50,7 +58,9 @@ class PageController extends Controller
 
     public function menufun($value='')
     {
-    	return view('frontend.menu');
+        $foods = Food::all();
+        $categories = Category::all();
+    	return view('frontend.menu',compact('categories','foods'));
     }
 
     public function productSinglefun($value='')
@@ -58,10 +68,10 @@ class PageController extends Controller
     	return view('frontend.productSingle');
     }
 
-     public function servicefun($value='')
-    {
-    	return view('frontend.service');
-    }
+    //  public function servicefun($value='')
+    // {
+    // 	return view('frontend.service');
+    // }
 
     public function shopfun($value='')
     {
