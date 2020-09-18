@@ -15,12 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 //frontend
 Route::get('/','PageController@homefun')->name('homepage');
-
+Route::post('/filtersubcategory','PageController@filtersubcategory')->name('filtercategory');
 Route::get('about','PageController@aboutfun')->name('aboutpage');
 
 Route::get('blog','PageController@blogfun')->name('blogpage');
 
 Route::get('blogSingle','PageController@blogSinglefun')->name('blogSinglepage');
+
+Route::get('productSingle','PageController@productSinglefun')->name('productSinglepage');
 
 
 Route::get('cart','PageController@cartfun')->name('cartpage');
@@ -54,6 +56,8 @@ Route::resource('categories','CategoryController');
 
 Route::resource('subcategories','SubcategoryController');
 });
+
+
 
 Auth::routes();
 

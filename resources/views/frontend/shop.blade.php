@@ -42,7 +42,7 @@
 		              	<div class="row">
 		              		<div class="col-md-3">
 						        		<div class="menu-entry">
-						    					<a href="#" class="img" style="background-image: url({{ asset('frondent/images/menu-1.jpg')}});"></a>
+						    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-1.jpg')}});"></a>
 						    					<div class="text text-center pt-4">
 						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
 						    						<p>A small river named Duden flows by their place and supplies</p>

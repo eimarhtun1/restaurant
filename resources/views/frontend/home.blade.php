@@ -50,7 +50,7 @@
       </div>
     </section>
 
-    {{-- <section class="ftco-intro">
+    <section class="ftco-intro">
     	<div class="container-wrap">
     		<div class="wrap d-md-flex align-items-xl-end">
 	    		<div class="info">
@@ -118,7 +118,7 @@
 	    		</div>
     		</div>
     	</div>
-    </section> --}}
+    </section>
 
     <section class="ftco-about d-md-flex">
     	<div class="one-half img" style="background-image: url({{ asset('frontend/images/menu.jpg')}});"></div>
@@ -278,7 +278,7 @@
               <img src="{{asset($food->photo)}}" class="card-img-top" alt="...">
     					<div class="text text-center pt-4">
     						<h3><a href="#">{{$food->codeno}}</a></h3>
-    						<h3><a href="#">{{$food->name}}</a></h3>
+    						<h3><a href="{{route('productSinglepage')}}">{{$food->name}}</a></h3>
     						<p class="price"><span>${{$food->price}}</span></p>
     						{{-- <p><a href="{{route('cartpage')}}" class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}} >Add to Cart</a></p> --}}
                 <p><button class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}}">Add To Cart</button></p>

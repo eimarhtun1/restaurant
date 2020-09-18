@@ -31,13 +31,16 @@
             $i=1; $total=0;
            @endphp
            @foreach ($orderBooking->foods as $food)
-          
+           @php 
+              $subtotal=$food->price*$food->pivot->qty;
+              $total+=$subtotal;
+              @endphp
           <tr>
             <td>{{$i++}}</td>
             <td>{{$food->name}}</td>
             <td>{{$food->price}}MMK</td>
             <td>{{$food->pivot->qty}}</td>
-            <td>{{$food->total}}</td>
+            <td>{{$subtotal}}</td>
           </tr>
           @endforeach
           <tr class="bg-dark text-white">

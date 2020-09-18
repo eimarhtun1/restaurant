@@ -13,8 +13,8 @@ class OrderBooking extends Model
 
     public function foods($value='')
    {
-    return $this->belongsToMany('App\Food','details')
-          ->withPivot('qty')
+    return $this->belongsToMany('App\Food','details','order_id')
+          ->withPivot('voucher_id','price','qty')
           ->withTimestamps();
    }
    public function user($value='')

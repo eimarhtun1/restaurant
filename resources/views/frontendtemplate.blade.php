@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Coffee - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Food Restaurant Management System </title>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,7 +33,7 @@
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Restaurant<small>Blend</small></a>
+	      <a class="navbar-brand" href="index.html">Union<small>Restaurant</small></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -41,18 +41,19 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="{{route('homepage')}}" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="{{route('menupage')}}" class="nav-link">Menu</a></li>
+            
 	          {{-- <li class="nav-item"><a href="{{route('servicepage')}}" class="nav-link">Services</a></li> --}}
 	          {{-- <li class="nav-item"><a href="{{route('blogpage')}}" class="nav-link">Blog</a></li> --}}
 	          <li class="nav-item"><a href="{{route('aboutpage')}}" class="nav-link">About</a></li>
-	          <li class="nav-item dropdown">
+	         {{--  <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="{{route('shoppage')}}">Shop</a>
-               {{--  <a class="dropdown-item" href="{{route('productSinglepage')}}">Single Product</a> --}}
+                <a class="dropdown-item" href="{{route('productSinglepage')}}">Single Product</a>
                 <a class="dropdown-item" href="{{route('cartpage')}}">Cart</a>
                
               </div>
-            </li>
+            </li> --}}
 	          <li class="nav-item"><a href="{{route('contactpage')}}" class="nav-link">Contact</a></li>
 	          <li class="nav-item cart"><a href="{{route('cartpage')}}" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small id="cartNoti"></small></span></a></li>
 
@@ -152,8 +153,8 @@
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">09-787926608</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">eimarhtun@gmail.com</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -163,7 +164,7 @@
           <div class="col-md-12 text-center">
 
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Restaurant is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Union</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
@@ -194,6 +195,6 @@
   <script src="{{ asset('frontend/js/google-map.js')}}"></script>
   <script src="{{ asset('frontend/js/main.js')}}"></script>
   <script type="text/javascript" src="{{asset('frontend/js/localstorage_custom.js')}}"></script>
-    
+    @yield('script')
   </body>
 </html>
