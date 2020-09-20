@@ -39,6 +39,41 @@
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+  div.subNav p{
+    font-size: 12px;
+}
+
+
+/*.dropdown-menu .divider:last-child {
+    display: none;
+}
+.dropdown-menu {
+    min-width: 300px !important;
+}
+
+
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+ 
+div.dropdown-submenu:hover > div.dropdown-menu{
+    display: block;
+}
+
+
+position yu tar
+.dropdown-submenu {
+    position:relative;
+}
+left bet ka nay por tar
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+}*/
+.first a:hover > div.ok{
+  display: block;
+}
 
 html {
   font-family: sans-serif;

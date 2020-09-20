@@ -75,7 +75,11 @@ class PageController extends Controller
 
     public function shopfun($value='')
     {
-    	return view('frontend.shop');
+    	$foods = Food::all();
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
+
+        return view('frontend.shop',compact('foods','categories','subcategories'));
     }
 
       public function categoryfun($id)
@@ -96,4 +100,12 @@ class PageController extends Controller
         $categories=Category::all();
         return view('frontend.subcategory',compact('categories','subcategories','foods'));
     }
+
+    public function food($id){
+        $foods = Food::all();
+        $categories = Category::all();
+        $subcategory = Subcategory::find($id);
+        return view('frontend.shop',compact('subcategory','categories','foods'));
+    }
+
 }

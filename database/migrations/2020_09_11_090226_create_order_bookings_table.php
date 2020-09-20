@@ -18,13 +18,8 @@ class CreateOrderBookingsTable extends Migration
             $table->string('voucherid');
             $table->date('order_date');
             $table->integer('total');
-            
-            
             $table->tinyInteger('status')->default(0);
-           
             $table->unsignedBigInteger('user_id');
-            
-           
             $table->foreign('user_id')
                   ->references('id')
                   ->on('users')

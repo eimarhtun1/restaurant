@@ -50,7 +50,7 @@
       </div>
     </section>
 
-    {{-- <section class="ftco-intro">
+    <section class="ftco-intro">
     	<div class="container-wrap">
     		<div class="wrap d-md-flex align-items-xl-end">
 	    		<div class="info">
@@ -78,47 +78,78 @@
 	    				</div>
 	    			</div>
 	    		</div>
+      {{-- booking table booking tablebooking tablebooking tablebooking table --}}
 	    		<div class="book p-4">
-	    			<h3>Book a Table</h3>
-	    			<form action="#" class="appointment-form">
+	    			{{-- <h3>Book a Table</h3>
+            <?php
+              $dsn = "mysql:host=localhost;dbname=confirmpj_db";
+              $user = 'root';
+              $password = "";
+              $pdo = new PDO($dsn,$user,$password);
+              ?>
+            <?php
+              
+              $sql = "SELECT * from bookings";
+              $stmt = $pdo->prepare($sql);
+              $stmt->execute();
+              $result=$stmt->fetchAll();
+
+              ?>
+               <?php
+              foreach ($result as $key => $book) {
+                $book_date = $book['booking_date'];
+                $book_time = $book['booking_time'];
+               
+                }
+              
+                
+                
+                
+?> --}}
+
+	    			<form method ="post" class="appointment-form" action="{{route("booking")}}">
+
+              @csrf
+              {{-- <input type="text" class="olddate" placeholder="{{$book_date}}">
+              <input type="text" class="oldtime" placeholder="{{$book_time}}"> --}}
 	    				<div class="d-md-flex">
 		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="First Name">
+		    					<input type="text" class="form-control name" name="name" placeholder="Input Name">
 		    				</div>
 		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Last Name">
+		    					<input type="text" class="form-control notable" name="noperson" placeholder="Number of person">
 		    				</div>
 	    				</div>
 	    				<div class="d-md-flex">
 		    				<div class="form-group">
 		    					<div class="input-wrap">
-		            		<div class="icon"><span class="ion-md-calendar"></span></div>
-		            		<input type="text" class="form-control appointment_date" placeholder="Date">
+		            		{{-- <div class="icon"><span class="ion-md-calendar"></span></div> --}}
+		            		<input type="date" name="date" class="form-control date" placeholder="Date">
 	            		</div>
 		    				</div>
 		    				<div class="form-group ml-md-4">
 		    					<div class="input-wrap">
 		            		<div class="icon"><span class="ion-ios-clock"></span></div>
-		            		<input type="text" class="form-control appointment_time" placeholder="Time">
+		            		<input type="times" name="time" class="form-control appointment_time time" placeholder="Time">
 	            		</div>
 		    				</div>
 		    				<div class="form-group ml-md-4">
-		    					<input type="text" class="form-control" placeholder="Phone">
+		    					<input type="text" name="phone" class="form-control phone" placeholder="Phone"  maxlength="11">
 		    				</div>
 	    				</div>
 	    				<div class="d-md-flex">
-	    					<div class="form-group">
+	    					{{-- <div class="form-group">
 		              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
-		            </div>
+		            </div> --}}
 		            <div class="form-group ml-md-4">
-		              <input type="submit" value="Appointment" class="btn btn-white py-3 px-4">
+		              <input type="submit" value="Appointment" class="btn btn-white py-3 px-4 bookingbtn">
 		            </div>
 	    				</div>
 	    			</form>
 	    		</div>
     		</div>
     	</div>
-    </section> --}}
+    </section>
 
     <section class="ftco-about d-md-flex">
     	<div class="one-half img" style="background-image: url({{ asset('frontend/images/menu.jpg')}});"></div>
@@ -277,9 +308,9 @@
     					{{-- <a href="#" class="img" style="background-image: url({{ asset('$food->photo')}});"></a> --}}
               <img src="{{asset($food->photo)}}" class="card-img-top" alt="...">
     					<div class="text text-center pt-4">
-    						<h3><a href="#">{{$food->codeno}}</a></h3>
-    						<h3><a href="#">{{$food->name}}</a></h3>
-    						<p class="price"><span>${{$food->price}}</span></p>
+    						<h3><a href="#">Code Number: {{$food->codeno}}</a></h3>
+    						<h3><a href="#">Food Name: {{$food->name}}</a></h3>
+    						<p class="price"><span>Food Price: ${{$food->price}}</span></p>
     						{{-- <p><a href="{{route('cartpage')}}" class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}} >Add to Cart</a></p> --}}
                 <p><button class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}}">Add To Cart</button></p>
     					</div>

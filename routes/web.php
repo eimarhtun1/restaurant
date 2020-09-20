@@ -32,6 +32,9 @@ Route::get('contact','PageController@contactfun')->name('contactpage');
 
 Route::get('menu','PageController@menufun')->name('menupage');
 
+Route::post('booking','BookingController@store')->name("booking");
+Route::get('booking','BookingController@show')->name('booking');
+
 
 // Route::get('service','PageController@servicefun')->name('servicepage');
 
@@ -40,6 +43,8 @@ Route::get('shop','PageController@shopfun')->name('shoppage');
 Route::get('category/{id}','PageController@categoryfun')->name('categorypage');
 
 Route::get('subcategory/{id}','PageController@subcategoryfun')->name('subcategorypage');
+
+// Route::get('food/{id}','PageController@food');
 
 
 //backend

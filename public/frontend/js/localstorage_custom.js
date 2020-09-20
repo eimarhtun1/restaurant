@@ -2,7 +2,7 @@
 $(document).ready(function(){
     getData();
      getTotal();
-    count()
+    count();
     $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -30,8 +30,38 @@ $(document).ready(function(){
             }
 
           };
+          
+
+        
+          // for booking
+          // $('.bookingbtn').click(function(){
+            
+          //   var notable = $('.notable').val();
+          //   var date = $('.date').val();
+          //   var time = $('.time').val();
+          //   var old_date = $('.olddate').attr('placeholder');
+          //   var old_time = $('.oldtime').attr('placeholder');
+          //   if(date == old_date && time == old_time){
+          //     alert("This Time is not available in these day!");
+          //   }else{
+          //     alert("Confirm");
+          //   }
+
+
+          // })
+            
+
+            
+
+          
+        
        
+        
+
+         
+          // end booking
     $('.add_to_cart').click(function(){
+
 
         var id=$(this).data('id');
         var name=$(this).data('name');
@@ -63,7 +93,8 @@ $(document).ready(function(){
         }
 
         localStorage.setItem('product', JSON.stringify(product));
-        getData();     
+        getData(); 
+        count();    
     })
     
     function getData(){
