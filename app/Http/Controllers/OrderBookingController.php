@@ -70,10 +70,11 @@ class OrderBookingController extends Controller
        $order->save();
        
         foreach ($cartArr as $row) {
-            $order->foods()->attach($row->id,['qty'=>$row->qty]);
+            // dd($row);
+            $order->foods()->attach($row->id,['voucher_id'=>uniqid(),'price'=>$row->price,'qty'=>$row->qty]);
         }
 
-        return 'Successful!';
+        return 'Your Order is Successful!';
     }
 
     /**
@@ -82,8 +83,9 @@ class OrderBookingController extends Controller
      * @param  \App\OrderBooking  $orderBooking
      * @return \Illuminate\Http\Response
      */
-    public function show(OrderBooking $orderBooking)
-    {  
+    public function show($id)
+    { 
+        $orderBooking =orderBooking::find($id); 
 
         return view('backend.orders.show',compact('orderBooking'));
     }

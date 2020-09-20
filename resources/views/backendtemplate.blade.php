@@ -43,7 +43,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
+<<<<<<< HEAD
           <span>Food Restaurant Management System</span></a>
+=======
+          <span>Food Restaurant</span></a>
+>>>>>>> 7bb80e1b296881d03e25c89665cea2e84f2d65fa
       </li>
 
       <!-- Divider -->

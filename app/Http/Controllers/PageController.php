@@ -16,6 +16,8 @@ class PageController extends Controller
         $subcategories = Subcategory::all();
 
     	return view('frontend.home',compact('foods','categories','subcategories'));
+
+    
     }
    public function loginfun($value='')
     {
@@ -40,6 +42,7 @@ class PageController extends Controller
     	return view('frontend.blogSingle');
     }
 
+   
     public function cartfun($value='')
     {
     	return view('frontend.cart');
@@ -60,12 +63,24 @@ class PageController extends Controller
     {
         $foods = Food::all();
         $categories = Category::all();
-    	return view('frontend.menu',compact('categories','foods'));
+        $subcategories=Subcategory::all();
+        // dd($categories);
+    	return view('frontend.menu',compact('categories','foods','subcategories'));
+    }
+
+    public function filtersubcategory(Request $request)
+    {
+        # code...
+        $id = $request->id;
+        $subcategories = Subcategory::where('category_id',$id)->get();
+        return $subcategories;
+    
     }
 
     public function productSinglefun($value='')
     {
-    	return view('frontend.productSingle');
+         $foods=Food::all(); 
+    	return view('frontend.productSingle',compact('foods'));
     }
 
     //  public function servicefun($value='')

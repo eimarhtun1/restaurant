@@ -60,13 +60,13 @@
 			<div class="col-sm-9">
 				<select class="form-control form-control-md" id="inputSubcategory" name="subcategory">
 					<optgroup label="Choose Subcategory">
-						{{-- $brands = DB::table('brands')
-						->join('items', 'brands.id', '=', 'items.brands_id')
-						
-						->select('brands.name')
-						->get(); --}}
 						@foreach($subcategories as $subcategory)
-						<option value="{{$subcategory->id}}" selected="selected">{{$subcategory->name}}</option>
+						<option value="{{$subcategory->id}}" 
+							@if($subcategory->id == $food->subcategory_id) {{'selected'}} 
+							@endif>
+							{{$subcategory->name}}
+						</option>
+							
 						@endforeach
 
 					</optgroup>

@@ -153,6 +153,7 @@
 
 <div class="tab-content ftco-animate" id="v-pills-tabContent">
 
+<<<<<<< HEAD
 	<div class="tab-pane fade show active" id="v-pills-0" role="tabpanel" aria-labelledby="v-pills-0-tab">
 		<div class="row">
 			<div class="col-md-3">
@@ -201,6 +202,56 @@
 			</div>
 		</div>
 	</div>
+=======
+		              <div class="tab-pane fade show active" id="v-pills-0" role="tabpanel" aria-labelledby="v-pills-0-tab">
+		              	<div class="row">
+		              		<div class="col-md-3">
+						        		<div class="menu-entry">
+						    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-1.jpg')}});"></a>
+						    					<div class="text text-center pt-4">
+						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
+						    						<p>A small river named Duden flows by their place and supplies</p>
+						    						<p class="price"><span>$5.90</span></p>
+						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+						    					</div>
+						    				</div>
+						        	</div>
+						        	<div class="col-md-3">
+						        		<div class="menu-entry">
+						    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-2.jpg')}});"></a>
+						    					<div class="text text-center pt-4">
+						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
+						    						<p>A small river named Duden flows by their place and supplies</p>
+						    						<p class="price"><span>$5.90</span></p>
+						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+						    					</div>
+						    				</div>
+						        	</div>
+						        	<div class="col-md-3">
+						        		<div class="menu-entry">
+						    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-3.jpg')}});"></a>
+						    					<div class="text text-center pt-4">
+						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
+						    						<p>A small river named Duden flows by their place and supplies</p>
+						    						<p class="price"><span>$5.90</span></p>
+						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+						    					</div>
+						    				</div>
+						        	</div>
+						        	<div class="col-md-3">
+						        		<div class="menu-entry">
+						    					<a href="#" class="img" style="background-image: url({{ asset('frontend/images/menu-4.jpg')}};"></a>
+						    					<div class="text text-center pt-4">
+						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
+						    						<p>A small river named Duden flows by their place and supplies</p>
+						    						<p class="price"><span>$5.90</span></p>
+						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+						    					</div>
+						    				</div>
+						        	</div>
+		              	</div>
+		              </div>
+>>>>>>> 7bb80e1b296881d03e25c89665cea2e84f2d65fa
 
 	<div class="tab-pane fade" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
 		<div class="row">

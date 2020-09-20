@@ -53,12 +53,7 @@
 							<div class="card-body text-center">
 								<h5 class="card-title text-truncate">{{$item->name}}</h5>
 								
-								{{-- <p class="item-price">
-									@php $discount=$item->price-($item->price*($item->discount/100)) @endphp
-									<span class="d-block">Ks{{number_format($discount)}}</span> 
-									<small><strike class="mr-2">{{number_format($item->price)}}Ks</strike> -{{$item->discount}}%</small>
-								</p>
- --}}{{-- 
+								
 								<div class="star-rating">
 									<ul class="list-inline">
 										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
@@ -81,12 +76,7 @@
 						</div>
 					</div>
 					@endforeach
-					{{-- @else --}}
-					{{-- <div class="col-12">
-						There are no item!
-					</div> --}}
-					{{-- @endif --}}
-
+					
 				</div>
 				
 				<div class="row">

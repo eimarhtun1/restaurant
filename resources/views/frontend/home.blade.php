@@ -308,9 +308,15 @@
     					{{-- <a href="#" class="img" style="background-image: url({{ asset('$food->photo')}});"></a> --}}
               <img src="{{asset($food->photo)}}" class="card-img-top" alt="...">
     					<div class="text text-center pt-4">
+<<<<<<< HEAD
     						<h3><a href="#">Code Number: {{$food->codeno}}</a></h3>
     						<h3><a href="#">Food Name: {{$food->name}}</a></h3>
     						<p class="price"><span>Food Price: ${{$food->price}}</span></p>
+=======
+    						<h3><a href="#">{{$food->codeno}}</a></h3>
+    						<h3><a href="{{route('productSinglepage')}}">{{$food->name}}</a></h3>
+    						<p class="price"><span>${{$food->price}}</span></p>
+>>>>>>> 7bb80e1b296881d03e25c89665cea2e84f2d65fa
     						{{-- <p><a href="{{route('cartpage')}}" class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}} >Add to Cart</a></p> --}}
                 <p><button class="btn btn-primary btn-outline-primary add_to_cart" data-id="{{$food->id}}" data-name="{{$food->name}}" data-price="{{$food->price}}" data-photo="{{$food->photo}}"  data-codeno="{{$food->codeno}}">Add To Cart</button></p>
     					</div>
